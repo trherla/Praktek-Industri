@@ -19,38 +19,18 @@
 
 <main>
   <!-- Carousel-->
-  <div class="hidden-xs-down container my-5">
-    <div class="row">
-      <div class='col-12'>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="d-block img-fluid" src="/images/deluxe.png" alt="Area Hotel Riverstone" width='100%'>
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="/images/superiordeluxe.png" alt="Area Hotel Riverstone" width='100%'>
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="/images/superior.png" alt="Area Hotel Riverstone" width='100%'>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  @component('comp.carousel')
+    @slot('gambar1')
+      /images/deluxe.png
+    @endslot
+    @slot('gambar2')
+      /images/superiordeluxe.png
+    @endslot
+    @slot('gambar3')
+      /images/superior.png
+    @endslot
+  @endcomponent
+  
 
   <!--Deskripsi-->
  <div class="container my-5">
@@ -75,54 +55,39 @@
           </strong>
           {{-- <br>
           <img src='images/rating.png' width='100%'> --}}
-          
-          <div class="container table-responsive-sm">
-            <table class="table table-sm table-borderless">
-              <tbody class="text-left text-uppercase">
-                <tr>
-                  <td width="15%">Cleanliness</td>
-                  <td>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:85.9%">8.59 Cleanliness</div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Comfort</td>
-                  <td>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:84.2%">8.42 Comfort</div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Meal</td>
-                  <td>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:81.0%">8.10 Meal</div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Location</td>
-                  <td>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:90.4%">9.04 Location</div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Service</td>
-                  <td>
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:84.5%">8.45 Service</div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          @component ('comp.progressbar')
+            @slot('lebar1')
+                85.9
+            @endslot
+            @slot('lebar2')
+                84.2
+            @endslot
+            @slot('lebar3')
+                81.0
+            @endslot
+            @slot('lebar4')
+                90.4
+            @endslot
+            @slot('lebar5')
+                84.5
+            @endslot
 
+            @slot('isi1')
+                Cleanliness
+            @endslot
+            @slot('isi2')
+                Comfort
+            @endslot
+            @slot('isi3')
+                Meal
+            @endslot
+            @slot('isi4')
+                Location
+            @endslot
+            @slot('isi5')
+                Service
+            @endslot
+          @endcomponent
 
         </div>
       </div>
@@ -324,12 +289,14 @@
               <div class="row">
                 <div class="col-12">
                   <div class="card-columns">
-                    <div class="card"><img class="card-img img-fluid" src="/images/cottage.png"></div>
-                    <div class="card"><img class="card-img img-fluid" src="/images/hall2.png"></div>
-                    <div class="card"><img class="card-img img-fluid" src="/images/hall.png"></div>
-                    <div class="card"><img class="card-img img-fluid" src="/images/restaurant.png"></div>
-                    <div class="card"><img class="card-img img-fluid" src="/images/deluxe.png"></div>
-                    <div class="card"><img class="card-img img-fluid" src="/images/superiordeluxe.png"></div>
+                    <picture>
+                    <div class="card"><img class="card-img img-fluid img-thumbnail" src="/images/cottage.png"></div>
+                    <div class="card"><img class="card-img img-fluid img-thumbnail" src="/images/hall2.png"></div>
+                    <div class="card"><img class="card-img img-fluid img-thumbnail" src="/images/hall.png"></div>
+                    <div class="card"><img class="card-img img-fluid img-thumbnail" src="/images/restaurant.png"></div>
+                    <div class="card"><img class="card-img img-fluid img-thumbnail" src="/images/deluxe.png"></div>
+                    <div class="card"><img class="card-img img-fluid img-thumbnail" src="/images/superiordeluxe.png"></div>
+                    </picture>
                   </div>
                 </div>
               </div>
